@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class SalaComponent implements OnInit {
 
-  private computadores : Computador[];
+  computadores : Computador[];
   private interval: any;
 
   constructor(private api: ApiService) { }
