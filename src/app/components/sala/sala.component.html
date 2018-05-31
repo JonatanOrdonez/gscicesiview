@@ -1,8 +1,15 @@
 <p>
   sala works!
 </p>
-<div *ngFor="let computador of computadores">
-  <p>{{ computador.idComputador }}</p>
-  <p>{{ computador.last_connection }}</p>
-  <p>-------------------------------------</p>
+<div ng-app="refresh_div" ng-controller="refresh_control">
+  <div *ngFor="let computador of computadores">
+        <p>{{ computador.id }}</p>
+      <p>{{ computador.idComputador }}</p>
+      <p>{{ computador.sala_id }}</p>
+      <p>{{ computador.estado }}</p>
+      <p>{{ computador.last_connection }}</p>
+      <p>{{ computador.created_at }}</p>
+      <p>{{ computador.updated_at }}</p>
+      <p>-------------------------------------</p>
+  </div>
 </div>

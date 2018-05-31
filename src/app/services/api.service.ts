@@ -7,12 +7,13 @@ import 'rxjs/Rx';
 @Injectable()
 export class ApiService {
 
-  protected token = "tnrApcPohoar9padK6JTEY3Z8mm7OkzkyLYUXgzjnJbqOg3DT1tOIuhQKBfM";
-
+  protected token = 'tnrApcPohoar9padK6JTEY3Z8mm7OkzkyLYUXgzjnJbqOg3DT1tOIuhQKBfM';
+  protected urlpost = 'https://gscicesiserver.herokuapp.com/api/post';
+  protected urlget = '/api/get/';
   constructor(private http: Http) { }
 
   getComputadores(salaid: number) : Observable<Computador[]>{
-    return this.http.post('https://gscicesiserver.herokuapp.com/api/post/getpcsbysala',
+    return this.http.post(this.urlpost+'/getpcsbysala',
     {api_token: this.token, idsala: salaid},
     {headers: new Headers({'Content-Type':  'application/json'})}).map(
       (response:Response)=> response.json()

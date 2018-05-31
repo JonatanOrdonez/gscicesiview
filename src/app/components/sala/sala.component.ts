@@ -10,11 +10,24 @@ import { Observable } from 'rxjs/Observable';
 })
 export class SalaComponent implements OnInit {
 
-  computadores : Computador[];
+  private computadores : Computador[];
+  private interval: any;
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.loadInterval();
+  }
+
+  loadInterval() {
+    this.refreshData();
+    this.interval = setInterval(() => { 
+        this.refreshData(); 
+    }, 5000);
+  }
+
+  refreshData() {
+    console.log("ya lo llame")
     this.api.getComputadores(1).subscribe(
       (pcs) => { this.computadores = pcs}
     )
