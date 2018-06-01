@@ -83,10 +83,10 @@
     <tbody>
       <tr *ngFor="let reserva of reservas">
         <th scope="row">{{ reserva.id }}</th>
-        <th scope="row">{{ reserva.fecha_inicio }}</th>
-        <th scope="row">{{ reserva.fecha_fin }}</th>
-        <th scope="row">{{ reserva.descripcion }}</th>
-        <th scope="row">{{ reserva.dia_id }}</th>
+        <th>{{ reserva.fecha_inicio }}</th>
+        <th>{{ reserva.fecha_fin }}</th>
+        <th>{{ reserva.descripcion }}</th>
+        <th>{{ reserva.dia_id }}</th>
       </tr>
     </tbody>
   </table>

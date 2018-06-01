@@ -38,3 +38,12 @@ font-ubuntu {
     max-height: 200px;
     overflow-x: hidden;
 }
+
+.box-dia {
+    color: white;
+    background: #18D1D4;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    padding-top: 6%;
+    height: 100%;
+}

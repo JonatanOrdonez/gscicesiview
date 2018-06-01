@@ -1,4 +1,8 @@
-<br>
+<div class="jumbotron">
+  <div class="container">
+    <p>hola</p>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
@@ -39,4 +43,25 @@
       </div>
     </div>
   </div>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Día</th>
+        <th scope="col">Fecha inicio</th>
+        <th scope="col">Fecha finalización</th>
+        <th scope="col">Actividad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserva of reservas">
+          <th scope="row">{{ reserva.id }}</th>
+          <th>{{ reserva.dia_id }}</th>
+          <th>{{ reserva.fecha_inicio }}</th>
+          <th>{{ reserva.fecha_fin }}</th>
+          <th>{{ reserva.descripcion }}</th>
+      </tr>
+    </tbody>
+  </table>
 </div>

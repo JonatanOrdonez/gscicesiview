@@ -62,5 +62,13 @@ export class ApiService {
       (response:Response)=> response.json()
     );
   }
+
+  getReservasPorDiaSala(iddia: number, idsala: number) {
+    return this.http.post(this.urlpost+'/getresdiasal',
+    {api_token: this.token, idSala: idsala, idDia: iddia},
+    {headers: new Headers({'Content-Type':  'application/json'})}).map(
+      (response:Response)=> response.json()
+    );
+  }
   
 }

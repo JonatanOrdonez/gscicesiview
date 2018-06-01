@@ -4,4 +4,5 @@ export class Sala {
     nombre: string;
     created_at: Date;
     updated_at: Date;
+    estado: string;
 }

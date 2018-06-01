@@ -3,6 +3,7 @@ import { ApiService } from '../../services/api.service';
 import { Computador } from '../../models/computador';
 import { Observable } from 'rxjs/Observable';
 import { Sala } from '../../models/sala';
+import { Reserva } from '../../models/reserva';
 
 @Component({
   selector: 'app-sala',
@@ -11,10 +12,19 @@ import { Sala } from '../../models/sala';
 })
 export class SalaComponent implements OnInit {
 
-  computadores : Computador[];
-  salas : Sala[];
+  computadores: Computador[];
+  salas: Sala[];
   idsala: number = 0;
   private interval: any;
+  reservas: Reserva[];
+
+  reservasLunes: Reserva[];
+  reservasMartes: Reserva[];
+  reservasMiercoles: Reserva[];
+  reservasJueves: Reserva[];
+  reservasViernes: Reserva[];
+  ReservasSabado: Reserva[];
+  reservasDomingo: Reserva[];
 
   constructor(private api: ApiService) { }
 
@@ -25,19 +35,21 @@ export class SalaComponent implements OnInit {
 
   loadInterval() {
     this.refreshpcs();
-    this.interval = setInterval(() => { 
-        this.refreshpcs(); 
+    this.interval = setInterval(() => {
+      this.refreshpcs();
     }, 2000);
   }
 
   refreshpcs() {
+    this.getReservas();
     this.api.getComputadores(this.idsala).subscribe(
-      (pcs) => { this.computadores = pcs; 
-        this.computadores.sort((compA,compB)=>{
+      (pcs) => {
+      this.computadores = pcs;
+        this.computadores.sort((compA, compB) => {
           return compA.idComputador.localeCompare(compB.idComputador);
-        });}
-    )
-   
+        });
+      }
+    );
   }
 
   getsalas() {
@@ -49,6 +61,12 @@ export class SalaComponent implements OnInit {
   cambiarSala(sala: Sala) {
     this.idsala = sala.id;
     this.refreshpcs();
+    this.getReservas();
   }
 
+  getReservas() {
+    this.api.getReservas(this.idsala).subscribe(
+      (data) => { this.reservas = data }
+    );
+  }
 }
