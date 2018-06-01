@@ -1,3 +1,4 @@
+<br>
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
@@ -11,7 +12,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <div *ngFor="let sala of salas">
-            <a class="dropdown-item" href="#" (click)="cambiarSala(sala)">{{ sala.nombre }}</a>
+            <button class="dropdown-item" href="#" (click)="cambiarSala(sala)">{{ sala.nombre }}</button>
           </div>
         </div>
       </div>

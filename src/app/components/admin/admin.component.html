@@ -1,0 +1,93 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <p>Seleccione una sala</p>
+    </div>
+    <div class="col-lg-6">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <a *ngIf="sala">{{sala.nombre}}</a>
+          <a *ngIf="!sala">Seleccione una sala</a>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div *ngFor="let sala of salas">
+            <button class="dropdown-item" (click)="setSala(sala)">{{ sala.nombre }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <p>Seleccione un día de la semana</p>
+    </div>
+    <div class="col-lg-6">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <a *ngIf="dia">{{dia.dia_semana}}</a>
+          <a *ngIf="!dia">Seleccione un día</a>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div *ngFor="let dia of dias">
+            <button class="dropdown-item" (click)="setDia(dia)">{{ dia.dia_semana }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <p>Ingrese la fecha de inicio en formato (YYYY-MM-DD hh:mm:ss)</p>
+    </div>
+    <div class="col-lg-6">
+      <input (keyup)="onKeyInit($event)" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <p>Ingrese la fecha de finalización en formato (YYYY-MM-DD hh:mm:ss)</p>
+    </div>
+    <div class="col-lg-6">
+      <input (keyup)="onKeyFin($event)" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <p>Descripción</p>
+    </div>
+    <div class="col-lg-6">
+      <input (keyup)="onKeyDescripcion($event)" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+    </div>
+    <div class="col-lg-6">
+      <button (click)="guardar()" type="button" class="btn btn-primary">Primary</button>
+    </div>
+  </div>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Fecha inicio</th>
+        <th scope="col">Fecha finalización</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Día de la semana</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserva of reservas">
+        <th scope="row">{{ reserva.id }}</th>
+        <th scope="row">{{ reserva.fecha_inicio }}</th>
+        <th scope="row">{{ reserva.fecha_fin }}</th>
+        <th scope="row">{{ reserva.descripcion }}</th>
+        <th scope="row">{{ reserva.dia_id }}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>

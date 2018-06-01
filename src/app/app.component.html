@@ -1,12 +1,5 @@
 <nav class="navbar navbar-dark bg-dark">
-    <a class="btn btn-sm btn-outline-secondary" href="http://gscicesiserver.herokuapp.com/login" sty>Iniciar sesión</a>
+        <a class="btn btn-sm btn-outline-secondary" href="home" >Inicio</a>
+    <a class="btn btn-sm btn-outline-secondary" href="admin" >Administrador</a>
 </nav>
-<div style="text-align:center">
-  <h2 class="font-ubuntu">
-    <div class="container">
-      <p>Bienvenido al {{ title }}</p>
-    </div>
-
-  </h2>
-</div>
-<app-sala></app-sala>
+<router-outlet></router-outlet>

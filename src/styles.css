@@ -15,3 +15,26 @@ font-ubuntu {
     padding-top: 5%;
     padding-bottom: 2%;
 }
+/* You can add global styles to this file, and also import other style files */
+font-arimo {
+    font-family: 'Arimo', sans-serif;
+}
+
+font-ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.box {
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 20px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -8px rgba(0,0,0,0.75);
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
