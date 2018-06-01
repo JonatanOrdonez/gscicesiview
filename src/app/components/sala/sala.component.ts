@@ -32,8 +32,12 @@ export class SalaComponent implements OnInit {
 
   refreshpcs() {
     this.api.getComputadores(this.idsala).subscribe(
-      (pcs) => { this.computadores = pcs }
+      (pcs) => { this.computadores = pcs; 
+        this.computadores.sort((compA,compB)=>{
+          return compA.idComputador.localeCompare(compB.idComputador);
+        });}
     )
+   
   }
 
   getsalas() {

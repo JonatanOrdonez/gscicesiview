@@ -12,6 +12,7 @@
     "start": "node server.js"
   },
   "private": true,
+  "homepage": "https://gscicesiview.herokuapp.com/",
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/cli": "~1.7.3",
