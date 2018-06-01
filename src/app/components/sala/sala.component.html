@@ -1,15 +1,22 @@
-<p>
-  sala works!
-</p>
-<div ng-app="refresh_div" ng-controller="refresh_control">
-  <div *ngFor="let computador of computadores">
-        <p>{{ computador.id }}</p>
-      <p>{{ computador.idComputador }}</p>
-      <p>{{ computador.sala_id }}</p>
-      <p>{{ computador.estado }}</p>
-      <p>{{ computador.last_connection }}</p>
-      <p>{{ computador.created_at }}</p>
-      <p>{{ computador.updated_at }}</p>
-      <p>-------------------------------------</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let computador of computadores" class="col-lg-3">
+      <div class="box">
+        <p class="text-center">
+          <i class="fas fa-desktop fa-4x"></i>
+        </p>
+        <h3 class="text-center text-secondary font-ubuntu">{{ computador.idComputador }}</h3>
+        <hr>
+        <div *ngIf="computador.estado=='Disponible'" style="background: #bceb00; color: white; font-size: 140%">
+          <p class="text-center">{{ computador.estado }}</p>
+        </div>
+        <div *ngIf="computador.estado=='Ocupado'" style="background: #e30500; color: white; font-size: 140%">
+          <p  class="text-center">{{ computador.estado }}</p>
+        </div>
+        <hr>
+        <p class="font-ubuntu text-center">Última conexión</p>
+        <p class="font-ubuntu text-center">{{ computador.last_connection }}</p>
+      </div>
+    </div>
   </div>
 </div>
