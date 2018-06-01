@@ -83,11 +83,4 @@ export class AdminComponent implements OnInit {
     );
   }
 
-  getDiaSemana(id: number) {
-    const dia = new Dia();
-    this.api.getDiaSemana(id).subscribe(
-      (data) => { this.dia = data }
-    );
-    return dia.dia_semana;
-  }
 }
