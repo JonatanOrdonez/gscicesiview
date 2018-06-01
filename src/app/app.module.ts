@@ -12,7 +12,7 @@ import { AdminComponent } from './components/admin/admin.component';
 const rutas: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'home', component: SalaComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({
