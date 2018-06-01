@@ -4,16 +4,9 @@ import { Http, HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SalaComponent } from './components/sala/sala.component';
-import { RouterModule, Routes } from '@angular/router';
 
 import { ApiService } from './services/api.service'
 import { AdminComponent } from './components/admin/admin.component';
-
-const rutas: Routes = [
-  {path: 'admin', component: AdminComponent},
-  {path: 'home', component: SalaComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
-];
 
 @NgModule({
   declarations: [
@@ -24,8 +17,7 @@ const rutas: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpModule,
-    RouterModule.forRoot(rutas)
+    HttpModule
   ],
   providers: [
     ApiService
