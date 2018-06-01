@@ -2,15 +2,19 @@
   "name": "gscicesiview",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
+    "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod",
-    "start": "node server.js",
-    "prod": "NODE_ENV=production node server.js"
+    "postinstall": "grunt sass:production && ng build --aot -prod"
+  },
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
   },
   "private": true,
   "dependencies": {
@@ -47,9 +51,5 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
-  },
-  "engines": {
-    "node": "8.9.4",
-    "yarn": "1.7.0"
   }
 }
