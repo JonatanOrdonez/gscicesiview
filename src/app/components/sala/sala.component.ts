@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Computador } from '../../models/computador';
 import { Observable } from 'rxjs/Observable';
+import { Sala } from '../../models/sala';
 
 @Component({
   selector: 'app-sala',
@@ -11,26 +12,39 @@ import { Observable } from 'rxjs/Observable';
 export class SalaComponent implements OnInit {
 
   computadores : Computador[];
+  salas : Sala[];
+  idsala: number = 0;
   private interval: any;
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
     this.loadInterval();
+    this.getsalas();
   }
 
   loadInterval() {
-    this.refreshData();
+    this.refreshpcs();
     this.interval = setInterval(() => { 
-        this.refreshData(); 
-    }, 5000);
+        this.refreshpcs(); 
+    }, 2000);
   }
 
-  refreshData() {
-    console.log("ya lo llame")
-    this.api.getComputadores(1).subscribe(
-      (pcs) => { this.computadores = pcs}
+  refreshpcs() {
+    this.api.getComputadores(this.idsala).subscribe(
+      (pcs) => { this.computadores = pcs }
     )
+  }
+
+  getsalas() {
+    this.api.getSalas().subscribe(
+      (sals) => { this.salas = sals }
+    );
+  }
+
+  cambiarSala(sala: Sala) {
+    this.idsala = sala.id;
+    this.refreshpcs();
   }
 
 }

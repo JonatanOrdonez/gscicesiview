@@ -19,4 +19,12 @@ export class ApiService {
       (response:Response)=> response.json()
     );
   }
+
+  getSalas() {
+    return this.http.post(this.urlpost+'/getsalas',
+    {api_token: this.token},
+    {headers: new Headers({'Content-Type':  'application/json'})}).map(
+      (response:Response)=> response.json()
+    );
+  }
 }

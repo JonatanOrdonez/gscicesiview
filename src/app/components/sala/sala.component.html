@@ -1,5 +1,24 @@
 <div class="container">
   <div class="row">
+    <div class="col-lg-6">
+      <p class="text-right">Seleccione una sala de computo</p>
+    </div>
+    <div class="col-lg-6">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Seleccione una sala
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div *ngFor="let sala of salas">
+            <a class="dropdown-item" href="#" (click)="cambiarSala(sala)">{{ sala.nombre }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
     <div *ngFor="let computador of computadores" class="col-lg-3">
       <div class="box">
         <p class="text-center">
@@ -11,7 +30,7 @@
           <p class="text-center">{{ computador.estado }}</p>
         </div>
         <div *ngIf="computador.estado=='Ocupado'" style="background: #e30500; color: white; font-size: 140%">
-          <p  class="text-center">{{ computador.estado }}</p>
+          <p class="text-center">{{ computador.estado }}</p>
         </div>
         <hr>
         <p class="font-ubuntu text-center">Última conexión</p>
