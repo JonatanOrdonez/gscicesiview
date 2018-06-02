@@ -23,6 +23,10 @@
     </div>
   </div>
   <br>
+  <div *ngIf="sala">
+    <p class="font-ubuntu text-center" style="font-size: 150%">{{ sala.nombre }}</p>
+  </div>
+  <br>
   <div class="row">
     <div *ngFor="let computador of computadores" class="col-lg-3">
       <div class="box">
@@ -42,6 +46,14 @@
         <p class="font-ubuntu text-center">{{ computador.last_connection }}</p>
       </div>
     </div>
+  </div>
+  <hr>
+  <br>
+  <div *ngIf="sala">
+    <p class="font-ubuntu text-center" style="font-size: 150%">Tareas programadas para la sala {{ sala.nombre }}</p>
+  </div>
+  <div *ngIf="!sala">
+    <p class="font-ubuntu text-center" style="font-size: 150%">Tareas programadas para la sala</p>
   </div>
   <br>
   <table class="table">
@@ -65,3 +77,6 @@
     </tbody>
   </table>
 </div>
+<br>
+<br>
+<br>

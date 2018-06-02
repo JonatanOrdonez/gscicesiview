@@ -14,6 +14,7 @@ export class SalaComponent implements OnInit {
 
   computadores: Computador[];
   salas: Sala[];
+  sala: Sala;
   idsala: number = 0;
   private interval: any;
   reservas: Reserva[];
@@ -60,6 +61,7 @@ export class SalaComponent implements OnInit {
 
   cambiarSala(sala: Sala) {
     this.idsala = sala.id;
+    this.sala = sala;
     this.refreshpcs();
     this.getReservas();
   }
