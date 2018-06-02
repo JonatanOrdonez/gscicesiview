@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
-      <p class="text-right">Seleccione una sala de cómputo</p>
+      <p class="text-right"  style="font-size: 120%">Seleccione una sala de cómputo</p>
     </div>
     <div class="col-lg-6">
       <div class="dropdown">
@@ -24,7 +24,7 @@
   </div>
   <br>
   <div *ngIf="sala">
-    <p class="font-ubuntu text-center" style="font-size: 150%">{{ sala.nombre }}</p>
+    <p class="font-ubuntu text-center" style="font-size: 150%"><strong>{{ sala.nombre }}</strong></p>
   </div>
   <br>
   <div class="row">
