@@ -7,4 +7,5 @@ export class Reserva {
     sala_id: number;
     created_at: number;
     updated_at: number;
+    dia_semana: string;
 }
